@@ -8,3 +8,6 @@ You can install by running `go get -u github.com/gabrielSchneider100/gimage`.
 
 ## Usage
 Type `gimage get SEARCH_TERM FOLDER` to download the desired search term to the selected folder. To see other commands run: `gimage --help` or `gimage -h`.
+
+## Contributing
+Just make a PR!
