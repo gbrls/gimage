@@ -15,8 +15,6 @@ func getURL(name string) string {
 
 func downloadImage(url string, folder string) error {
 
-	//fmt.Printf("started downloading image %v\n", folder)
-
 	resp, err := http.Get(url)
 	if err != nil {
 		return err
@@ -29,9 +27,7 @@ func downloadImage(url string, folder string) error {
 	}
 	if _, err := os.Stat(fmt.Sprintf("%v", folder)); os.IsNotExist(err) {
 		err = os.Mkdir(fmt.Sprintf("%v", folder), os.ModePerm)
-		// if err != nil {
-		// 	return fmt.Errorf("error creating folder: %v", err)
-		// }
+
 	}
 	f, err := os.Create(fmt.Sprintf("%v/%v.jpeg", folder, url[len("https://encrypted-tbn0.gstatic.com/images?q=tbn:"):]))
 	if err != nil {
@@ -45,7 +41,6 @@ func downloadImage(url string, folder string) error {
 		return err
 	}
 
-	//fmt.Printf("finished downloading image %v\ntook %v\n", folder, time.Since(past))
 	return nil
 }
 
