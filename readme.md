@@ -1,5 +1,7 @@
 # Gimage
 [![Go Report Card](https://goreportcard.com/badge/github.com/gabrielSchneider100/gimage)](https://goreportcard.com/report/github.com/gabrielSchneider100/gimage)
+[![GoDoc](https://godoc.org/github.com/gabrielSchneider100/gimage?status.svg)](https://godoc.org/github.com/gabrielSchneider100/gimage)
+
 
 Gimage is a lightweight image downloader that downloads images from _(currently)_ google images in low resolution.
 
