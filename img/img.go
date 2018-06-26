@@ -28,8 +28,8 @@ func downloadImage(url string, folder string) error {
 	if err != nil {
 		return err
 	}
-	if _, err := os.Stat(fmt.Sprintf("%v", folder)); os.IsNotExist(err) {
-		err = os.Mkdir(fmt.Sprintf("%v", folder), os.ModePerm)
+	if _, err := os.Stat(folder); os.IsNotExist(err) {
+		err = os.Mkdir((folder), os.ModePerm)
 
 	}
 	f, err := os.Create(fmt.Sprintf("%v/%v.jpeg", folder, url[len("https://encrypted-tbn0.gstatic.com/images?q=tbn:"):]))
@@ -38,13 +38,7 @@ func downloadImage(url string, folder string) error {
 	}
 	defer f.Close()
 
-	err = jpeg.Encode(f, img, nil)
-	if err != nil {
-		fmt.Println(err)
-		return err
-	}
-
-	return nil
+	return jpeg.Encode(f, img, nil)
 }
 
 //GetImagesURLs searches for 'name' in google and downloads its firsts results
