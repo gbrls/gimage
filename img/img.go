@@ -5,11 +5,14 @@ import (
 	"image/jpeg"
 	"net/http"
 	"os"
+	"strings"
 
 	"github.com/gocolly/colly"
 )
 
 func getURL(name string) string {
+	name = strings.Replace(name, " ", "_", -1)
+	name = strings.Replace(name, `"`, "", -1)
 	return fmt.Sprintf("https://www.google.com/search?tbm=isch&q=%v", name)
 }
 
