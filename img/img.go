@@ -4,14 +4,14 @@ import (
 	"fmt"
 	"image/jpeg"
 	"net/http"
+	"net/url"
 	"os"
-	"strings"
 
 	"github.com/gocolly/colly"
 )
 
 func getURL(name string) string {
-	
+
 	uri, err := url.Parse("https://www.google.com/search?tbm=isch")
 	if err != nil {
 		panic(err)
